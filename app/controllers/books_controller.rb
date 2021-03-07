@@ -21,12 +21,16 @@ class BooksController < ApplicationController
     @user = User.find(current_user.id)
     @books = Book.all
     @users = User.all
+    session['user'] = "books-index"
   end
 
   def show
     @book2 = Book.find(params[:id])
     @book = Book.new
     @user = User.find(@book2.user_id)
+    @book_comment = BookComment.new
+    @book_comments = BookComment.all
+    session['user'] = "books-show"
   end
 
   def edit
