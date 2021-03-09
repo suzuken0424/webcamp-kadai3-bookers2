@@ -3,7 +3,7 @@
   <p id=notice><%= notice %></p>
   <div class="container px-5 px-sm-0">
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-md-3">
         <h2>User info</h2>
         <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
         <table class="table">
@@ -37,7 +37,7 @@
         </div>
         <% end %>
       </div>
-      <div class="col-xs-9 offset-md-1">
+      <div class="col-md-8 offset-md-1">
         <h2>Book detail</h2>
         <table class="table">
           <tr>
@@ -97,7 +97,7 @@
         </div>
         <div class="new-comment">
         <%= form_with(model:[@book2, @book_comment], local: true) do |f| %>
-          <%= f.text_area :comment, rows:'5', placeholder: "コメントをここに" %>
+          <%= f.text_area :comment, placeholder: "コメントをここに", size: "50x5" %>
           <%= f.submit "Create Book comment" %>
         <% end %>
         </div>
